@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<updates>
+	<update>
+		<name>xbAzPlayer</name>
+		<description>Module for Azuracast radio player</description>
+		<element>mod_xbazplayer</element>
+		<type>module</type>
+		<client>administrator</client>
+		<version>0.0.1.1</version>
+		<infourl>https://crosborne.uk/xbazplayer</infourl>
+		<downloads>
+			<downloadurl type="full" format="zip">https://crosborne.uk/downloads?download=30</downloadurl>
+		</downloads>
+        <tags>
+          <tag>alpha</tag>
+        </tags>
+        <sha256>f80aa283fa85640bc02f6b1f54eedd9c8f6457fe700d40093fb96942570a86d3</sha256>
+    	<changelogurl>
+    		http://j5.localhost/updateserver/changelog_xbazplayer.xml
+    		<!-- https://raw.githubusercontent.com/rogercreagh/j5-xbImages/main/changelog_xbimagecarousel.xml -->
+    	</changelogurl>
+		<maintainer>Roger C-O</maintainer>
+		<maintainerurl>https://crosborne.uk/xbimagecarousel</maintainerurl>
+		<targetplatform name="joomla" version="5.*"/>	
+		<php_minimum>8.2</php_minimum>
+	</update>
+	<update>
+		<name>xbAzPlayer</name>
+		<description>Module for Azuracast radio player</description>
+		<element>mod_xbazplayer</element>
+		<type>module</type>
+		<client>administrator</client>
+		<version>0.0.1.0</version>
+		<infourl>https://crosborne.uk/xbazplayer</infourl>
+		<downloads>
+			<downloadurl type="full" format="zip">https://crosborne.uk/downloads?download=30</downloadurl>
+		</downloads>
+        <tags>
+          <tag>alpha</tag>
+        </tags>
+        <sha256></sha256>
+    	<changelogurl>
+    		http://j5.localhost/updateserver/changelog_xbazplayer.xml
+    		<!-- https://raw.githubusercontent.com/rogercreagh/j5-xbImages/main/changelog_xbimagecarousel.xml -->
+    	</changelogurl>
+		<maintainer>Roger C-O</maintainer>
+		<maintainerurl>https://crosborne.uk/xbimagecarousel</maintainerurl>
+		<targetplatform name="joomla" version="5.*"/>	
+		<php_minimum>8.2</php_minimum>
+	</update>
+</updates>

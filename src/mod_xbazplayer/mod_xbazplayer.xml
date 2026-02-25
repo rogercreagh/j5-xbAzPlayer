@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extension type="module" client="site" method="upgrade">
+    <name>mod_xbazplayer</name>
+    <version>0.0.1.1</version>
+	<creationDate>25th February 2026</creationDate>
+	<author>RogerCO</author>
+	<authorEmail>roger@crosborne.co.uk</authorEmail>
+	<authorUrl>www.crosborne.uk</authorUrl>
+	<copyright>Copyright (C) Roger Creagh-Osborne, 2026, All rights reserved.</copyright>
+	<license>GNU/GPL Version 3</license>
+	<description>MOD_XBAZPLAYER_XML_DESCRIPTION</description>
+
+	<namespace path="src/">Crosborne\Module\XbAzPlayer</namespace>
+
+	<scriptfile>script.xbazplayer.php</scriptfile>	
+    <files>
+        <folder module="mod_xbazplayer">services</folder>
+        <folder>src</folder>
+        <folder>tmpl</folder>
+        <folder>language</folder>
+    </files>
+    <media destination="mod_xbazplayer" folder="media">
+        <filename>joomla.asset.json</filename>
+        <folder>css</folder>
+        <folder>js</folder>
+    </media>
+    
+    <!-- CHANGE THESE TO GITHUB ONCE PUBLISHED -->
+    <changelogurl>http://j5.localhost/updateserver/changelog_xbazplayer.xml</changelogurl>
+	    <!--https://raw.githubusercontent.com/rogercreagh/j5-xbMusic/main/changelog_xbmusic.xml -->
+    <updateservers>
+	    <server type="extension" name="xbAzPlayer Module Updates">
+	    	http://j5.localhost/updateserver/update_xbazplayer.xml
+	    </server>
+			<!-- https://raw.githubusercontent.com/rogercreagh/j5-xbMusic/main/update_xbmusic.xml -->
+	</updateservers>
+	
+	<config>
+				<inlinehelp button="show"/>
+        <fields name="params">
+            <fieldset name="basic">
+            	<field name="azurl" type="url"
+            		label="Azuracast Stream URL"
+            		description="Url for the stream (usually ends '/radio.mp3')"
+            		filter="url"
+            		default="https://az.wreckersradio.uk/listen/wreckersradio/radio.mp3"
+            	/>
+			</fieldset>
+		</fields>
+	</config>
+</extension>

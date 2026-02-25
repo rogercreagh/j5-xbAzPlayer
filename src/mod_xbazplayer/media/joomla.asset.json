@@ -1,0 +1,21 @@
+{
+  "$schema": "https://developer.joomla.org/schemas/json-schema/web_assets.json",
+  "name": "mod_xbazplayer",
+  "version": "0.0.1.1",
+  "description": "Xb Azuracast Player Module",
+  "license": "GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html",
+  "assets": [
+    {
+		"name" : "xbazplayer.styles",
+		"description" : "xbAzPlayer custom css",
+		"type" : "style",
+		"uri" : "mod_xbazplayer/xbazplayer.css"
+	},{
+	      "name": "mod_xbazplayer.playerctl",
+		  "description": "Player controls",
+	      "type": "script",
+	      "uri": "mod_xbazplayer/playerctl.js"
+	}
+
+  ]
+}
