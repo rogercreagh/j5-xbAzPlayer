@@ -98,7 +98,7 @@ return new class () implements InstallerScriptInterface {
     }
     
     function showChanglog($ver, $url) {
-        $output = '<div style="max-width: 800px; background-color: white; border: 1px solid black; padding:20px 30px; margin:10px auto;">';
+        $output = '<div style="max-width: 750px; background-color: white; border: 1px solid black; padding:15px 25px; margin:10px auto; font-size:0.9rem;">';
         if (!$this->remoteFileExists($url)) {
             $output .= '<p style="color:red;">Could not find changelog file <code>'.$url.'</code></p></div>';
             return $output;
@@ -129,7 +129,7 @@ return new class () implements InstallerScriptInterface {
                     $output.= '<p style="color:red;">Changelog for v'.$ver.' not found; displaying most recent</p>';
                 }
             }
-            $output .= '<h3>Changelog for ';
+            $output .= '<h4>Changelog for ';
             
             if (key_exists('title',$log)) {
                 $output .= $log['title'];
@@ -141,7 +141,7 @@ return new class () implements InstallerScriptInterface {
             if (key_exists('date',$log)) {
                 $output .= $log['date'];
             }
-            $output .= '</h3><hr />';
+            $output .= '</h4><hr />';
             
             $colours = array('security'=>'bg-danger', 'addition'=>'bg-success', 'fix'=>'bg-dark','language'=>'bg-primary',
                 'change'=>'bg-warning text-dark','remove'=>'bg-secondary','note'=>'bg-info'
@@ -150,7 +150,7 @@ return new class () implements InstallerScriptInterface {
             foreach ($colours as $colkey=>$col) {
                 if ((isset($log[$colkey])) && isset($log[$colkey]['item'])) {
                     $output .= '<tr style="border-bottom:1px solid #888;"><td style="background-color:#ddd; vertical-align: top; padding: 5px 10px;">';
-                    $output .=  '<span class="badge '.$col.'" style="font-size: 0.9rem;padding: 0.3rem 0.5rem;">'.$colkey.'</span>';
+                    $output .=  '<span class="badge '.$col.'" style="font-size: 0.8rem;padding: 0.3rem 0.5rem;">'.$colkey.'</span>';
                     $output .= '</td><td style="vertical-align: top; padding: 5px 10px;"><ul>';
                     if (is_array($log[$colkey]['item'])) {
                         foreach ($log[$colkey]['item'] as $item) {

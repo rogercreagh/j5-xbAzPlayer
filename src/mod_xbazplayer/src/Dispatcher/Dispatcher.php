@@ -2,7 +2,7 @@
 /*******
  * @package xbMusic
  * @filesource mod_xbimagecarousel/services/provider.php
- * @version 0.0.1.0 23rd February 2026
+ * @version 0.0.1.2 25th February 2026
  * @copyright Copyright (c) Roger Creagh-Osborne, 2026
  * @license GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html
  ******/
@@ -48,8 +48,14 @@ class Dispatcher extends JoomlaDispatcher implements HelperFactoryAwareInterface
         //        $helper->doAdvancedTableOperations($this->module->id, $this->input);
         
         $params = new Registry($this->module->params);
-        $azurl = $params->get('azutl','');
-        
+        $azurl = $params->get('azurl','hello');
+        $subtitle = $params->get('subtitle','');
+        $showcover = 1;
+        $showartist = 1;
+        $showalbum = 1;
+        $showyear = 1;
+        $showtrack = 1;
+        $showprogress = 1;
         require ModuleHelper::getLayoutPath('mod_xbazplayer');
     }
    

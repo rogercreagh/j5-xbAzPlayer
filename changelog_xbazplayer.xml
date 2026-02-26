@@ -2,7 +2,62 @@
 	<changelog>
 		<element>mod_xbazplayer</element>
 		<type>module</type>
-		<version>0.0.1.0</version>
+		<version>0.0.1.3</version>
+		<addition>
+			<item><![CDATA[<h3>Development Release v0.0.1.3</h3> Updated 26th February 2026]]></item>
+			<item>Text auto scrolling in now playing details</item>
+		</addition>
+		<remove>
+		</remove>
+		<change>
+		</change>
+		<fix>
+		</fix>
+		<language>
+			<item>en-GB only</item>
+		</language>
+		<security>
+		</security>
+		<note>
+			<item>for Documentation see README.md file on GitHub</item>
+			<item><![CDATA[Not listed on <a href="https://extensions.joomla.org" target="_blank">JED</a>]]></item>
+			<item><![CDATA[Raise bugs and feature requests on <a href="https://github.com/rogercreagh/j5-xbAzPlayer/issues" target="_blank">GitHub</a>]]></item>
+		</note>
+		<date>26th Febuary 2026</date>
+		<title>xbAzuracast Player Module</title>
+	</changelog>	
+	<changelog>
+		<element>mod_xbazplayer</element>
+		<type>module</type>
+		<version>0.0.1.2</version>
+		<addition>
+			<item><![CDATA[<h3>Development Release v0.0.1.2</h3> Updated 25th February 2026]]></item>
+			<item>Song Artist Album displayed around cover</item>
+		</addition>
+		<remove>
+		</remove>
+		<change>
+			<item>Play and Stop buttons toggle</item>
+		</change>
+		<fix>
+		</fix>
+		<language>
+			<item>en-GB only</item>
+		</language>
+		<security>
+		</security>
+		<note>
+			<item>for Documentation see README.md file on GitHub</item>
+			<item><![CDATA[Not listed on <a href="https://extensions.joomla.org" target="_blank">JED</a>]]></item>
+			<item><![CDATA[Raise bugs and feature requests on <a href="https://github.com/rogercreagh/j5-xbAzPlayer/issues" target="_blank">GitHub</a>]]></item>
+		</note>
+		<date>25th Febuary 2026</date>
+		<title>xbAzuracast Player Module</title>
+	</changelog>	
+	<changelog>
+		<element>mod_xbazplayer</element>
+		<type>module</type>
+		<version>0.0.1.1</version>
 		<addition>
 			<item><![CDATA[<h3>Development Release v0.0.1.1</h3> Updated 25th February 2026]]></item>
 			<item>Changelog displayed on update</item>

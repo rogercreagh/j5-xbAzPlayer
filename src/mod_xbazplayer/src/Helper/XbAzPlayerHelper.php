@@ -2,7 +2,7 @@
 /*******
  * @package xbMusic
  * @filesource mod_xbazplayer/src/Helper/XbAzPlayerHelper.php
- * @version 0.0.1.0 23rd February 2026
+ * @version 0.0.1.2 25th February 2026
  * @copyright Copyright (c) Roger Creagh-Osborne, 2026
  * @license GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html
  ******/
@@ -31,14 +31,5 @@ class XbAzPlayerHelper
             return $default;
         }
     }
-    
-    public static function dummy() {
-        $clog = new Changelog();
-        $clog->setVersion('0.0.1.0');
-        $clog->loadFromXml('http://j5.localhost/updateserver/changelog_xbazplayer.xml');
-        $props = $clog->getProperties(false);
-        Factory::getApplication()->enqueueMessage(print_r($props,true));
         
-    }
-    
 }
