@@ -1,7 +1,7 @@
 /**
  * @package xbAzPlayer
  * @filesource /media/mod_xbazplayer/js/playerctl.js
- * @version 0.0.1.3 26th February 2026
+ * @version 0.0.1.3 28th February 2026
  * @desc functions to start and stop player. Trigger with buttonclick
  * @author Roger C-O
  * @copyright Copyright (c) Roger Creagh-Osborne, 2026
@@ -43,10 +43,25 @@ function loadNowPlaying() {
             // Do we have a change of track
 			if (np.now_playing.song.id != nowId) {
 				//console.log('update '+nowId);
+				if (np.now_playing.song.title == '') {
+					trackok.style.display = "none"; 
+				} else {
+					trackok.style.display = "block"; 
+					document.getElementById('nowtrack').innerText = np.now_playing.song.title;					
+				}
 				document.getElementById('nowcover').src = np.now_playing.song.art;
-				document.getElementById('nowartist').innerText = np.now_playing.song.artist;
-				document.getElementById('nowalbum').innerText = np.now_playing.song.album;
-				document.getElementById('nowtrack').innerText = np.now_playing.song.title;
+				if (np.now_playing.song.artist == '') {
+					artistok.style.display = "none"; 
+				} else {
+					artistok.style.display = "block"; 
+					document.getElementById('nowartist').innerText = np.now_playing.song.artist;					
+				}
+				if (np.now_playing.song.album == '') {
+					albumok.style.display = "none"; 
+				} else {
+					albumok.style.display = "block"; 
+					document.getElementById('nowalbum').innerText = np.now_playing.song.album;					
+				}
 				//update track id
 				nowId = np.now_playing.song.id;
 				// animate any text that is overflowing
@@ -56,8 +71,14 @@ function loadNowPlaying() {
 				    	if (!container.classList.contains('animate-overflow')) {
 				    		container.classList.add('animate-overflow');
 				  		}
-				  	}
-				}); 			          
+				  	} else {
+						container.classList.remove('animate-overflow');
+					}
+				});
+				document.getElementById('progbar').max =  np.now_playing.duration;			          
+			}
+			if (np.now_playing.elapsed) {
+				document.getElementById('progbar').value =  np.now_playing.elapsed;			          			
 			}
             nowPlayingTimeout = setTimeout(loadNowPlaying, 9000);
         }
@@ -67,5 +88,8 @@ function loadNowPlaying() {
 }
 
 $(function() {
+	var trackok = document.getElementById('trackok');
+	var artistok = document.getElementById('artistok');
+	var albumok = document.getElementById('albumok');
     loadNowPlaying();
 });

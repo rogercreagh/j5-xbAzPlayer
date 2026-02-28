@@ -28,3 +28,18 @@
 
 }
 
+.xbimgsubtitle {
+	font-style: italic;
+}
+#nowtrack {
+	font-weight:bold;
+	font-size:1.1rem;
+	text-transform:uppercase;	
+}
+#nowcover {
+	max-width:300px;
+}
+#nowartist {
+	font-weight: bold;
+	margin: 0 auto;
+}

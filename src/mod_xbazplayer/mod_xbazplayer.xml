@@ -2,7 +2,7 @@
 <extension type="module" client="site" method="upgrade">
     <name>mod_xbazplayer</name>
     <version>0.0.1.3</version>
-	<creationDate>25th February 2026</creationDate>
+	<creationDate>28th February 2026</creationDate>
 	<author>RogerCO</author>
 	<authorEmail>roger@crosborne.co.uk</authorEmail>
 	<authorUrl>www.crosborne.uk</authorUrl>
@@ -45,6 +45,58 @@
             		filter="url"
             		default="https://az.wreckersradio.uk/listen/wreckersradio/radio.mp3"
             	/>
+            	<field name="subtitle" type="text"
+            		label="MOD_XBIMG_SUBTITLE"
+            		description="MOD_XBIMG_SUBTITLE_DESC"
+            		hint="optional text above image"
+            	/>
+				<field name="showtrack" type="radio"
+					label="MOD_XBIMG_ALBUMINFO"
+					description="MOD_XBIMG_ALBUMINFO_DESC"
+ 					class="btn-group btn-group-yesno"
+					default="1"
+				>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="showcover" type="radio"
+					label="MOD_XBIMG_ALBUMINFO"
+					description="MOD_XBIMG_ALBUMINFO_DESC"
+ 					class="btn-group btn-group-yesno"
+					default="1"
+				>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="showartist" type="radio"
+					label="MOD_XBIMG_ALBUMINFO"
+					description="MOD_XBIMG_ALBUMINFO_DESC"
+ 					class="btn-group btn-group-yesno"
+					default="1"
+				>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="showalbum" type="radio"
+					label="MOD_XBIMG_ALBUMINFO"
+					description="MOD_XBIMG_ALBUMINFO_DESC"
+ 					class="btn-group btn-group-yesno"
+					default="1"
+				>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="showprogress" type="radio"
+					label="MOD_XBIMG_ALBUMINFO"
+					description="MOD_XBIMG_ALBUMINFO_DESC"
+ 					class="btn-group btn-group-yesno"
+					default="1"
+				>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				
+            	
 			</fieldset>
 		</fields>
 	</config>

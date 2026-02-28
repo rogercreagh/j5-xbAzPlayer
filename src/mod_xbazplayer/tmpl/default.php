@@ -24,9 +24,10 @@ $playerid = 'player'.$this->module->id;
 ?>
 <div class="modxbazplayer">
 <?php if($subtitle !='') :?>
-	<span class="xbimgsubtitle"><?php echo $subtitle; ?></span><br/>
+	<div class="xbimgsubtitle pull-left"><?php echo $subtitle; ?></div>
+    <div class="clearfix"></div>
 <?php endif; ?>
-	<div class="animated">
+	<div id="trackok" class="animated">
         <?php if($showtrack) :?>
         	<div id="nowtrack" class="marquee" style="margin:10px auto;">track</div>
         <?php endif; ?>
@@ -35,28 +36,28 @@ $playerid = 'player'.$this->module->id;
 	<img id="nowcover" src="/media/mod_xbimagecarousel/images/WreckersCircleLogo-500x500.png" />
     <div class="clearfix"></div>
 <?php endif; ?>
-	<div class="animated">
-        <?php if($showartist) : ?>
-        	<span id="nowartist" class="marquee">artist</span>
-        <?php endif; ?>
-    </div>
-	<div class="animated">
-        <?php if($showalbum) : ?>
-        	<i>Album</i>: <span id="nowalbum" class="marquee">album</span>
-        <?php endif; ?>
-	</div>
-
-		<div class="pull-right">
+		<div class="pull-left">
 			<audio id="<?php echo $playerid; ?>" style="height:30px;border-radius:12px;"
 				src="">
 					<i>Your browser does not support the audio tag.</i>
 			</audio> 
-			<button id="startplay" onclick="playStart('<?php echo $playerid; ?>','https://az.wreckersradio.uk/listen/wreckersradio/radio.mp3');" >Play</button>      		
-			<button id="stopplay" onclick="playStop('<?php echo $playerid; ?>');" style="display:none;">Stop</button>      		
-            <div id="playertitle" class="pull-left" style="margin:5px 20px 0 0;"></div>
-            <?php if($showprogress) : ?>
-            	<div id="nowprogress" class="pull-left">prog</div>
-            <?php endif; ?>
+			<button id="startplay" onclick="playStart('<?php echo $playerid; ?>','https://az.wreckersradio.uk/listen/wreckersradio/radio.mp3');" style="font-family:unset;">&#9654;</button>      		
+			<button id="stopplay" onclick="playStop('<?php echo $playerid; ?>');" style="display:none;">&#9724;</button>  
+			<div id="artistalbum" class="pull-left">
+            	<div id="artistok" class="animated">
+                    <?php if($showartist) : ?>
+                    	<span id="nowartist" class="marquee">artist</span>
+                    <?php endif; ?>
+                </div>
+            	<div id="albumok" class="animated">
+                    <?php if($showalbum) : ?>
+                    	<span id="nowalbum" class="marquee">album</span>
+                    <?php endif; ?>
+            	</div>
+			</div>    		
         </div>
+        <?php if($showprogress) : ?>
+        	<div id="nowprogress" class="pull-left" style="width:100%"><progress id="progbar" value="32" max="100"></progress></div>
+        <?php endif; ?>
 
 </div>

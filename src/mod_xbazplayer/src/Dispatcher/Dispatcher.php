@@ -50,12 +50,11 @@ class Dispatcher extends JoomlaDispatcher implements HelperFactoryAwareInterface
         $params = new Registry($this->module->params);
         $azurl = $params->get('azurl','hello');
         $subtitle = $params->get('subtitle','');
-        $showcover = 1;
-        $showartist = 1;
-        $showalbum = 1;
-        $showyear = 1;
-        $showtrack = 1;
-        $showprogress = 1;
+        $showcover = $params->get('showcover','1');
+        $showartist = $params->get('showartist','1');
+        $showalbum = $params->get('showalbum','1');
+        $showtrack = $params->get('showtrack','1');
+        $showprogress = $params->get('showprogress','1');
         require ModuleHelper::getLayoutPath('mod_xbazplayer');
     }
    
