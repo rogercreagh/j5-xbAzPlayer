@@ -14,7 +14,7 @@
         <tags>
           <tag>alpha</tag>
         </tags>
-        <sha256>b3480fdf78aaf49dec8a3a67fc995964f6abdce5601df16a6d5f800ddbfd76e7</sha256>
+        <sha256>449b888f6c6f40bc1144458a38a5606e5fbd9d34842af8a5de1626c855bdc58d</sha256>
     	<changelogurl>
     		<!-- http://j5.localhost/updateserver/changelog_xbazplayer.xml -->
     		https://raw.githubusercontent.com/rogercreagh/j5-xbImages/main/changelog_xbazplayer.xml

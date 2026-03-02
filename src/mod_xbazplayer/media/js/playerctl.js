@@ -1,7 +1,7 @@
 /**
  * @package xbAzPlayer
  * @filesource /media/mod_xbazplayer/js/playerctl.js
- * @version 0.0.1.3 28th February 2026
+ * @version 0.0.1.3 2nd March 2026
  * @desc functions to start and stop player. Trigger with buttonclick
  * @author Roger C-O
  * @copyright Copyright (c) Roger Creagh-Osborne, 2026
@@ -35,10 +35,11 @@ var nowPlaying;
 let nowId = "0";
 
 function loadNowPlaying() {
-    $.ajax({
+	var azapi = document.getElementById('playerctrls').getAttribute('azapi');
+   $.ajax({
         cache: false,
         dataType: "json",
-        url: 'http://az.wreckersradio.uk/api/nowplaying/wreckersradio',
+        url: azapi + '/nowplaying/wreckersradio',
         success: function(np) {
             // Do we have a change of track
 			if (np.now_playing.song.id != nowId) {
@@ -78,7 +79,10 @@ function loadNowPlaying() {
 				document.getElementById('progbar').max =  np.now_playing.duration;			          
 			}
 			if (np.now_playing.elapsed) {
-				document.getElementById('progbar').value =  np.now_playing.elapsed;			          			
+				document.getElementById('progbar').value =  np.now_playing.elapsed;		
+				const mins = Math.floor(np.now_playing.duration / 60);
+				const secs = np.now_playing.duration % 60;
+				document.getElementById('nowduration').innerText = `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;	          			
 			}
             nowPlayingTimeout = setTimeout(loadNowPlaying, 9000);
         }

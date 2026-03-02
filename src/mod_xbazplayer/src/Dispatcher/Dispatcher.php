@@ -40,7 +40,7 @@ class Dispatcher extends JoomlaDispatcher implements HelperFactoryAwareInterface
     public function dispatch()
     {
         $language = Factory::getApplication()->getLanguage();
-        $language->load('mod_xbimagecarousel', JPATH_BASE . '/modules/mod_xbazplayer');
+        $language->load('mod_xbazplayer', JPATH_BASE . '/modules/mod_xbazplayer');
         // The default Joomla Factory classes set the Database object within the Helper class,
         // but not within the Dispatcher class, and we need the dbo for passing to the Table
         $helper = $this->getHelperFactory()->getHelper('XbAzPlayerHelper');
@@ -49,6 +49,8 @@ class Dispatcher extends JoomlaDispatcher implements HelperFactoryAwareInterface
         
         $params = new Registry($this->module->params);
         $azurl = $params->get('azurl','hello');
+        $azapi = $params->get('azapi','goodbye');
+        $azapi = rtrim("/",$azurl);
         $subtitle = $params->get('subtitle','');
         $showcover = $params->get('showcover','1');
         $showartist = $params->get('showartist','1');

@@ -40,19 +40,25 @@
         <fields name="params">
             <fieldset name="basic">
             	<field name="azurl" type="url"
-            		label="Azuracast Stream URL"
-            		description="Url for the stream (usually ends '/radio.mp3')"
+            		label="MOD_XBAZPLAY_AZSTREAM"
+            		description="MOD_XBAZPLAY_AZSTREAM_DESC"
             		filter="url"
             		default="https://az.wreckersradio.uk/listen/wreckersradio/radio.mp3"
             	/>
+            	<field name="azapi" type="url"
+            		label="MOD_XBAZPLAY_AZAPI"
+            		description="MOD_XBAZPLAY_AZAPI_DESC"
+            		filter="url"
+            		default="https://az.wreckersradio.uk/api/"
+            	/>
             	<field name="subtitle" type="text"
-            		label="MOD_XBIMG_SUBTITLE"
-            		description="MOD_XBIMG_SUBTITLE_DESC"
+            		label="MOD_XBAZPLAY_SUBTITLE"
+            		description="MOD_XBAZPLAY_SUBTITLE_DESC"
             		hint="optional text above image"
             	/>
 				<field name="showtrack" type="radio"
-					label="MOD_XBIMG_ALBUMINFO"
-					description="MOD_XBIMG_ALBUMINFO_DESC"
+					label="MOD_XBAZPLAY_SHOWTRACK"
+					description="MOD_XBAZPLAY_SHOWTRACK_DESC"
  					class="btn-group btn-group-yesno"
 					default="1"
 				>
@@ -60,8 +66,8 @@
 					<option value="1">JYES</option>
 				</field>
 				<field name="showcover" type="radio"
-					label="MOD_XBIMG_ALBUMINFO"
-					description="MOD_XBIMG_ALBUMINFO_DESC"
+					label="MOD_XBAZPLAY_SHOWCOVER"
+					description="MOD_XBAZPLAY_SHOWCOVER_DESC"
  					class="btn-group btn-group-yesno"
 					default="1"
 				>
@@ -69,8 +75,8 @@
 					<option value="1">JYES</option>
 				</field>
 				<field name="showartist" type="radio"
-					label="MOD_XBIMG_ALBUMINFO"
-					description="MOD_XBIMG_ALBUMINFO_DESC"
+					label="MOD_XBAZPLAY_SHOWARTIST"
+					description="MOD_XBAZPLAY_SHOWARTIST_DESC"
  					class="btn-group btn-group-yesno"
 					default="1"
 				>
@@ -78,8 +84,8 @@
 					<option value="1">JYES</option>
 				</field>
 				<field name="showalbum" type="radio"
-					label="MOD_XBIMG_ALBUMINFO"
-					description="MOD_XBIMG_ALBUMINFO_DESC"
+					label="MOD_XBAZPLAY_SHOWALBUM"
+					description="MOD_XBAZPLAY_SHOWALBUM_DESC"
  					class="btn-group btn-group-yesno"
 					default="1"
 				>
@@ -87,8 +93,8 @@
 					<option value="1">JYES</option>
 				</field>
 				<field name="showprogress" type="radio"
-					label="MOD_XBIMG_ALBUMINFO"
-					description="MOD_XBIMG_ALBUMINFO_DESC"
+					label="MOD_XBAZPLAY_SHOWPROG"
+					description="MOD_XBAZPLAY_SHOWPROG_DESC"
  					class="btn-group btn-group-yesno"
 					default="1"
 				>
