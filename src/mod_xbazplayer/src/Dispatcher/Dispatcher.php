@@ -50,7 +50,7 @@ class Dispatcher extends JoomlaDispatcher implements HelperFactoryAwareInterface
         $params = new Registry($this->module->params);
         $azurl = $params->get('azurl','hello');
         $azapi = $params->get('azapi','goodbye');
-        $azapi = rtrim("/",$azurl);
+        $azapi = rtrim($azapi, "/");
         $subtitle = $params->get('subtitle','');
         $showcover = $params->get('showcover','1');
         $showartist = $params->get('showartist','1');

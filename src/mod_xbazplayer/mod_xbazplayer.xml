@@ -23,6 +23,7 @@
         <filename>joomla.asset.json</filename>
         <folder>css</folder>
         <folder>js</folder>
+        <folder>images</folder>
     </media>
     
     <!-- CHANGE THESE TO GITHUB ONCE PUBLISHED -->
