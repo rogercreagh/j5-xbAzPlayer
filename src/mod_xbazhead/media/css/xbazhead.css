@@ -1,0 +1,88 @@
+/*******
+ * @package xbAzHead
+ * @filesource media/css/xbazhead.css
+ * @version xbazhead 0.0.1.4 9th March 2026
+ * @author Roger C-O
+ * @copyright Copyright (c) Roger Creagh-Osborne, 2026
+ * @license GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html
+ ******/
+ 
+.modxbazhead {
+	color:white
+}
+.animated {
+  max-width: 250px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.xbw200 .animated {
+	width:200px;
+}
+.animate-overflow .marquee {
+  animation: marquee 10s linear infinite;
+}
+
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  20% { transform: translateX(0); } 
+  100% { transform: translateX(-100%); }
+
+}
+
+.xbsubtitle {
+	font-style: italic;
+}
+.xbsong {
+	margin:0 10px;
+	width:calc(100% - 20px)px;
+	font-weight:bold;
+	font-size:1.1rem;
+	text-transform:uppercase;	
+}
+.xbcoverpic {
+	width:100%
+}
+.xbplayctrls {
+	margin:3px 15px 0 10px;
+	width:fit-content;
+	font-family:serif;
+	float:left;
+}
+.xbplayctrls button {
+	width:32px;
+}
+.xbartistalbum {
+	width: 180px;
+	float:left;
+}
+.xbplayartist {
+	font-weight: bold;
+	margin: 0 auto;
+}
+.xbplayalbum {
+	
+}
+.xbprogress {
+	
+}
+.xbprogressbar {
+	width: calc(100% - 75px);
+	margin: 0 10px;
+}
+.xbplaydur {
+	font-size: 0.9rem;
+	color: #ccc;
+}
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}   
+.hide {
+	display: none;
+}
+.show {
+	display: block;
+}
+

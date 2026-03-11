@@ -1,13 +1,13 @@
 <?php
 /*******
- * @package xbMusic
- * @filesource mod_xbazplayer/services/provider.php
- * @version 0.0.1.2 25th February 2026
+ * @package xbAzHead
+ * @filesource mod_xbazhead/src/Dispathcer/Dispatcher.php
+ * @version 0.0.1.4 9th March 2026
  * @copyright Copyright (c) Roger Creagh-Osborne, 2026
  * @license GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html
  ******/
 
-namespace Crosborne\Module\XbAzPlayer\Site\Dispatcher;
+namespace Crosborne\Module\XbAzHead\Site\Dispatcher;
 
 \defined('_JEXEC') or die;
 
@@ -40,10 +40,10 @@ class Dispatcher extends JoomlaDispatcher implements HelperFactoryAwareInterface
     public function dispatch()
     {
         $language = Factory::getApplication()->getLanguage();
-        $language->load('mod_xbazplayer', JPATH_BASE . '/modules/mod_xbazplayer');
+        $language->load('mod_xbazhead', JPATH_BASE . '/modules/mod_xbazhead');
         // The default Joomla Factory classes set the Database object within the Helper class,
         // but not within the Dispatcher class, and we need the dbo for passing to the Table
-        $helper = $this->getHelperFactory()->getHelper('XbAzPlayerHelper');
+        $helper = $this->getHelperFactory()->getHelper('XbAzHeadHelper');
         //        $helper->doBasicTableOperations($this->module->id, $this->input);
         //        $helper->doAdvancedTableOperations($this->module->id, $this->input);
         
@@ -52,12 +52,18 @@ class Dispatcher extends JoomlaDispatcher implements HelperFactoryAwareInterface
         $azapi = $params->get('azapi','goodbye');
         $azapi = rtrim($azapi, "/");
         $subtitle = $params->get('subtitle','');
-        $showcover = $params->get('showcover','1');
-        $showartist = $params->get('showartist','1');
-        $showalbum = $params->get('showalbum','1');
-        $showtrack = $params->get('showtrack','1');
-        $showprogress = $params->get('showprogress','1');
-        require ModuleHelper::getLayoutPath('mod_xbazplayer');
+        $showpopout = $params->get('showpopout','1');
+        $popouturl = $params->get('popouturl', '/modules/mod_xbazhead/player');
+        
+        $dispopts = $params->get('display',[]);
+        $dispopts = array_flip($dispopts);        
+        $showcover = array_key_exists('image',$dispopts);
+        $showartist = array_key_exists('artist',$dispopts);
+        $showalbum = array_key_exists('album',$dispopts);
+        $showsong = array_key_exists('song',$dispopts);
+        $showprogress = array_key_exists('prog',$dispopts);
+
+        require ModuleHelper::getLayoutPath('mod_xbazhead');
     }
    
 }

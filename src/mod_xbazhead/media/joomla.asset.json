@@ -1,0 +1,26 @@
+{
+  "$schema": "https://developer.joomla.org/schemas/json-schema/web_assets.json",
+  "name": "mod_xbazhead",
+  "version": "0.0.1.1",
+  "description": "Xb Azuracast Player Header module",
+  "license": "GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html",
+  "assets": [
+    {
+		"name" : "xbazhead.styles",
+		"description" : "xbAzHead custom css",
+		"type" : "style",
+		"uri" : "mod_xbazhead/xbazhead.css"
+	},{
+	      "name": "mod_xbazhead.azheadctl",
+		  "description": "Azuracast Header Payer script",
+	      "type": "script",
+	      "uri": "mod_xbazhead/azheadctl.js"
+	},{
+  	      "name": "mod_xbazhead.azplayctl",
+  		  "description": "Azuracast Player controls",
+  	      "type": "script",
+  	      "uri": "mod_xbazhead/azplayctl.js"
+	}
+
+  ]
+}

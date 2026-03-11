@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extension type="module" client="site" method="upgrade">
+    <name>mod_xbazhead</name>
+    <version>0.0.1.4</version>
+	<creationDate>9th March 2026</creationDate>
+	<author>RogerCO</author>
+	<authorEmail>roger@crosborne.co.uk</authorEmail>
+	<authorUrl>www.crosborne.uk</authorUrl>
+	<copyright>Copyright (C) Roger Creagh-Osborne, 2026, All rights reserved.</copyright>
+	<license>GNU/GPL Version 3</license>
+	<description>MOD_XBAZHEAD_XML_DESCRIPTION</description>
+
+	<namespace path="src/">Crosborne\Module\XbAzHead</namespace>
+
+	<scriptfile>script.xbazhead.php</scriptfile>	
+    <files>
+        <folder module="mod_xbazhead">services</folder>
+        <folder>src</folder>
+        <folder>tmpl</folder>
+        <folder>language</folder>
+        <folder>player</folder>
+    </files>
+    <media destination="mod_xbazhead" folder="media">
+        <filename>joomla.asset.json</filename>
+        <folder>css</folder>
+        <folder>js</folder>
+        <folder>images</folder>
+    </media>
+    
+    <!-- CHANGE THESE TO GITHUB ONCE PUBLISHED -->
+    <changelogurl>http://j5.localhost/updateserver/changelog_xbazhead.xml</changelogurl>
+	    <!--https://raw.githubusercontent.com/rogercreagh/j5-xbMusic/main/changelog_xbmusic.xml -->
+    <updateservers>
+	    <server type="extension" name="xbAzHead Module Updates">
+	    	http://j5.localhost/updateserver/update_xbazhead.xml
+	    </server>
+			<!-- https://raw.githubusercontent.com/rogercreagh/j5-xbMusic/main/update_xbmusic.xml -->
+	</updateservers>
+	
+	<config>
+				<inlinehelp button="show"/>
+        <fields name="params">
+            <fieldset name="basic">
+            	<field name="azurl" type="url"
+            		label="MOD_XBAZHEAD_AZSTREAM"
+            		description="MOD_XBAZHEAD_AZSTREAM_DESC"
+            		filter="url"
+            		default="https://az.wreckersradio.uk/listen/wreckersradio/radio.mp3"
+            	/>
+            	<field name="azapi" type="url"
+            		label="MOD_XBAZHEAD_AZAPI"
+            		description="MOD_XBAZHEAD_AZAPI_DESC"
+            		filter="url"
+            		default="https://az.wreckersradio.uk/api/"
+            	/>
+            	<field name="subtitle" type="text"
+            		label="MOD_XBAZHEAD_SUBTITLE"
+            		description="MOD_XBAZHEAD_SUBTITLE_DESC"
+            		hint="optional text above image"
+            	/>
+				<field name="showpopout" type="radio"
+					label="MOD_XBAZHEAD_SHOWPOP"
+					description="MOD_XBAZHEAD_SHOWPOP_DESC"
+ 					class="btn-group btn-group-yesno"
+					default="1"
+				>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+            	<field name="popouturl" type="url"
+            		label="MOD_XBAZHEAD_POPURL"
+            		description="MOD_XBAZHEAD_POPURL_DESC"
+            		filter="url"
+            		relative="true"
+            		showon="showpopout:1"
+            		default="/modules/mod_xbazhead/player"
+            	/>				
+				<field 
+					name="display" 
+					type="checkboxes"
+					label="MOD_XBAZHEAD_DISPLAY_OPTS"
+					description="MOD_XBAZHEAD_DISPLAY_OPTS_DESC"
+					multiple="true"
+					checkedOptions="song,image,artist,album"		  
+				>
+					<option value="song">Song title</option>
+					<option value="image">MOD_XBAZHEAD_SHOWCOVER</option>
+					<option value="artist">MOD_XBAZHEAD_SHOWARTIST</option>
+					<option value="album">MOD_XBAZHEAD_SHOWALBUM</option>
+					<option value="prog">MOD_XBAZHEAD_SHOWPROG</option>
+				</field>
+			</fieldset>
+		</fields>
+	</config>
+</extension>
