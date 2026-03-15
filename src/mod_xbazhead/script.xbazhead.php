@@ -82,7 +82,7 @@ return new class () implements InstallerScriptInterface {
             $ext_mess .= '<p><b>'.$this->extname.'</b> module has been updated from '.$this->oldver.' of '.$this->olddate;
             $ext_mess .= ' to v<b>'.$ver.'</b> dated '.$manifest->creationDate.'</p>';
            $ext_mess .= $this->showChanglog($ver, $url);
-            $ext_mess .= '<p>Check options for existing instances of xbAzHead on <a href="index.php?option=com_modules&view=select&client_id=0">Site Modules</a> page.</p>';
+            $ext_mess .= '<p>Check options for existing instances of xbAzHead on <a href="index.php?option=com_modules&view=modules&client_id=0">Site Modules</a> page.</p>';
         }
         if (($type=='install') || ($type=='discover_install')) {
             $ext_mess .= '<h3>'.$this->extname.' module installed</h3>';
