@@ -2,26 +2,26 @@
 <updates>
 	<update>
 		<name>xbAzHead</name>
-		<description>Module for Azuracast radio player</description>
+		<description>Module for Compact Azuracast radio player</description>
 		<element>mod_xbazhead</element>
 		<type>module</type>
 		<client>administrator</client>
-		<version>0.0.1.0</version>
-		<infourl>https://crosborne.uk/xbazplayer</infourl>
+		<version>0.2.0.0</version>
+		<infourl>https://github.com/rogercreagh/j5-xbAzPlayer</infourl>
 		<downloads>
 			<downloadurl type="full" format="zip">https://crosborne.uk/downloads?download=31</downloadurl>
 		</downloads>
         <tags>
           <tag>alpha</tag>
         </tags>
-        <sha256>6b031b32a6cd3aa8dfb17fdd537f13c62f3927a74f13d7ebd1e67b32285cf745</sha256>
+        <sha256>5cc18d3ebe80ae822142c6b63d03a13f4cf0da2b13e2b336c27ed6be9ea2a414</sha256>
     	<changelogurl>
-    		http://j5.localhost/updateserver/changelog_xbazplayer.xml
-    		<!-- https://raw.githubusercontent.com/rogercreagh/j5-xbImages/main/changelog_xbazhead.xml -->
+    		<!-- http://j5.localhost/updateserver/changelog_xbazplayer.xml -->
+    		https://raw.githubusercontent.com/rogercreagh/j5-xbAzPlayer/main/changelog_xbazhead.xml
     	</changelogurl>
 		<maintainer>Roger C-O</maintainer>
 		<maintainerurl>https://crosborne.uk/xbimagecarousel</maintainerurl>
 		<targetplatform name="joomla" version="5.*"/>	
-		<php_minimum>8.2</php_minimum>
+		<php_minimum>8.3</php_minimum>
 	</update>
 </updates>

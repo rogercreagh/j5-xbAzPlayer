@@ -2,7 +2,7 @@
 /*******
  * @package xbAzHead
  * @filesource mod_xbazhead/script.xbazhead.php
- * @version 0.0.1.1 25th February 2026
+ * @version 0.2.0.0 17th March 2026
  * @copyright Copyright (c) Roger Creagh-Osborne, 2026
  * @license GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html
  ******/
@@ -21,14 +21,14 @@ use Joomla\CMS\Version;
 
 return new class () implements InstallerScriptInterface {
 
-    protected $minphp = '8.2';
+    protected $minphp = '8.3';
     protected $jminver = '5.0';
     protected $jmaxver = '7.0';
     protected $extension = 'mod_xbazhead';
     protected $extname = 'xbAzuracastHeader';
-    protected $extslug = 'xbazhead';
+    protected $extslug = 'j5-xbAzPlayer';
     protected $ver = 'v1.2.3.4';
-    protected $date = '32nd January 2024';
+    protected $extdate = '32nd January 2024';
     protected $oldver = 'v1.2.3.4';
     protected $olddate = '32nd January 2024';
     
@@ -76,21 +76,24 @@ return new class () implements InstallerScriptInterface {
         $app = Factory::getApplication();
         $manifest = $adapter->getManifest();
         $ver = $manifest->version;
+        $this->extdate = $manifest->creationDate;
         $ext_mess = '<div style="position: relative; margin: 15px 15px 15px -15px; padding: 1rem; border:solid 1px #444; border-radius: 6px;">';
-        if ($type == 'update') {
-            $url = $manifest->changelogurl;
-            $ext_mess .= '<p><b>'.$this->extname.'</b> module has been updated from '.$this->oldver.' of '.$this->olddate;
-            $ext_mess .= ' to v<b>'.$ver.'</b> dated '.$manifest->creationDate.'</p>';
-           $ext_mess .= $this->showChanglog($ver, $url);
-            $ext_mess .= '<p>Check options for existing instances of xbAzHead on <a href="index.php?option=com_modules&view=modules&client_id=0">Site Modules</a> page.</p>';
-        }
-        if (($type=='install') || ($type=='discover_install')) {
-            $ext_mess .= '<h3>'.$this->extname.' module installed</h3>';
-            $ext_mess .= '<p>version '.$ver.' dated '.$manifest->creationDate.'</p>';
-            $ext_mess .= '<p>Enable module and set options on <a href="index.php?option=com_modules&view=select&client_id=0">Site Modules</a> page.</p>';
-        }
+        $url = $manifest->changelogurl;
         if (($type=='install') || ($type=='discover_install') || ($type == 'update')) {
-            $ext_mess .= '<p>For help and information see <a href="https://crosborne.co.uk/'.$this->extslug.'/doc" target="_blank" style="font-weight:bold; color:black;">www.crosborne.co.uk/'.$this->extslug.'/doc</a> ';
+            if ($type == 'update') {
+                $ext_mess .= '<p><b>'.$this->extname.'</b> module has been updated from '.$this->oldver.' of '.$this->olddate;
+                $ext_mess .= ' to v<b>'.$ver.'</b> dated '.$manifest->creationDate.'</p>';
+            } else {
+                $ext_mess .= '<h3>'.$this->extname.' module installed</h3>';
+                $ext_mess .= '<p>version '.$ver.' dated '.$manifest->creationDate.'</p>';               
+            }
+            $ext_mess .= $this->showChanglog($ver, $url);
+            if ($type == 'update') {
+                $ext_mess .= '<p>Check options for existing instances of xbAzHead on <a href="index.php?option=com_modules&view=modules&client_id=0">Site Modules</a> page.</p>';
+            } else {
+                $ext_mess .= '<p>Enable module and set options on <a href="index.php?option=com_modules&view=select&client_id=0">Site Modules</a> page.</p>';
+            }
+            $ext_mess .= '<p>For help and information see <a href="https://github.com/rogercreagh/'.$this->extslug.'" target="_blank" style="font-weight:bold; color:black;">github.com/rogercreagh/'.$this->extslug.'</a> ';
             $ext_mess .= '</div>';
             echo $ext_mess;
         }
@@ -111,36 +114,29 @@ return new class () implements InstallerScriptInterface {
             $json = json_encode($xml);
             $changelog = json_decode($json,true);
             $log = 0;
-            if (array_key_exists('element',$changelog)) {
+            if (array_key_exists('element',$changelog['changelog'])) {
                 //only 1 changelog in file
-                $log = $changelog;
+                $log = $changelog['changelog'];
                 $newver = $log['version'];
                 if (version_compare($newver, $ver) !== 0) {
                     $output.= '<p style="color:red;">Changelog for v'.$ver.' not found. v'.$newver.' is only one available.</p>';
                 }
             } else {
-                $changelog = $changelog['changelog'];
+                $changelogs = $changelog['changelog'];
                 //look for current version
-                for ($i = 0; $i < count($changelog); $i++) {
-                    if (version_compare($changelog[$i]['version'], $ver) === 0) $log = $changelog[$i];
+                for ($i = 0; $i < count($changelogs); $i++) {
+                    if (version_compare($changelogs[$i]['version'], $ver) === 0) $log = $changelogs[$i];
                 }
                 if ($log === 0 ) {
-                    $log = $changelog[0];
+                    $log = $changelogs[0];
                     $output.= '<p style="color:red;">Changelog for v'.$ver.' not found; displaying most recent</p>';
                 }
             }
             $output .= '<h4>Changelog for ';
             
-            if (key_exists('title',$log)) {
-                $output .= $log['title'];
-                //               unset($log['title']);
-            } else {
-                $output .= $log['element'];
-            }
+            $output .= $this->extname;
             $output .= ' v'.$log['version'].' ';
-            if (key_exists('date',$log)) {
-                $output .= $log['date'];
-            }
+            $output .= $this->extdate;
             $output .= '</h4><hr />';
             
             $colours = array('security'=>'bg-danger', 'addition'=>'bg-success', 'fix'=>'bg-dark','language'=>'bg-primary',
