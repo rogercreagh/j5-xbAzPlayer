@@ -26,7 +26,7 @@ return new class () implements InstallerScriptInterface {
     protected $jmaxver = '7.0';
     protected $extension = 'mod_xbazhead';
     protected $extname = 'xbAzuracastHeader';
-    protected $extslug = 'j5-xbAzPlayer';
+    protected $extslug = 'j5-xbAzPlayer'; 
     protected $ver = 'v1.2.3.4';
     protected $extdate = '32nd January 2024';
     protected $oldver = 'v1.2.3.4';
