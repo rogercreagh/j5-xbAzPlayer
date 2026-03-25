@@ -1,8 +1,8 @@
 <?php
 /*******
- * @package xbMusic
- * @filesource mod_xbazplayer/services/provider.php
- * @version 0.0.1.0 23rd February 2026
+ * @package xbAzPlayMod Sidebar Module xbAzPlayMod
+ * @filesource mod_xbazplaymod/services/provider.php
+ * @version 0.0.2.0 20th March 2026
  * @since 23rd February 2026
  * @copyright Copyright (c) Roger Creagh-Osborne, 2026
  * @license GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html
@@ -20,8 +20,8 @@ return new class () implements ServiceProviderInterface {
 
     public function register(Container $container): void
     {
-        $container->registerServiceProvider(new ModuleDispatcherFactoryServiceProvider('\\Crosborne\\Module\\XbAzPlayer'));
-        $container->registerServiceProvider(new HelperFactoryServiceProvider('\\Crosborne\\Module\\XbAzPlayer\\Site\\Helper'));
+        $container->registerServiceProvider(new ModuleDispatcherFactoryServiceProvider('\\Crosborne\\Module\\XbAzPlayMod'));
+        $container->registerServiceProvider(new HelperFactoryServiceProvider('\\Crosborne\\Module\\XbAzPlayMod\\Site\\Helper'));
         $container->registerServiceProvider(new ModuleServiceProvider());
     }
 };

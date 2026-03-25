@@ -1,7 +1,7 @@
 <?php
 /*******
- * @package xbAzPlayer
- * @filesource mod_xbazplayer/script.xbazplayer.php
+ * @package xbAzPlayMod
+ * @filesource mod_xbazplaymod/script.xbazplaymod.php
  * @version 0.0.1.1 25th February 2026
  * @copyright Copyright (c) Roger Creagh-Osborne, 2026
  * @license GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html
@@ -24,9 +24,9 @@ return new class () implements InstallerScriptInterface {
     protected $minphp = '8.2';
     protected $jminver = '5.0';
     protected $jmaxver = '7.0';
-    protected $extension = 'mod_xbazplayer';
+    protected $extension = 'mod_xbazplaymod';
     protected $extname = 'xbAzuracastPlayer';
-    protected $extslug = 'xbazplayer';
+    protected $extslug = 'xbazplaymod';
     protected $ver = 'v1.2.3.4';
     protected $date = '32nd January 2024';
     protected $oldver = 'v1.2.3.4';
@@ -82,7 +82,7 @@ return new class () implements InstallerScriptInterface {
             $ext_mess .= '<p><b>'.$this->extname.'</b> module has been updated from '.$this->oldver.' of '.$this->olddate;
             $ext_mess .= ' to v<b>'.$ver.'</b> dated '.$manifest->creationDate.'</p>';
             $ext_mess .= $this->showChanglog($ver, $url);
-            $ext_mess .= '<p>Check options for existing instances of xbAzPlayer on <a href="index.php?option=com_modules&view=select&client_id=0">Site Modules</a> page.</p>';
+            $ext_mess .= '<p>Check options for existing instances of xbAzPlayMod on <a href="index.php?option=com_modules&view=select&client_id=0">Site Modules</a> page.</p>';
         }
         if (($type=='install') || ($type=='discover_install')) {
             $ext_mess .= '<h3>'.$this->extname.' module installed</h3>';

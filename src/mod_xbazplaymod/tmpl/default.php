@@ -1,7 +1,7 @@
 <?php
 /*******
- * @package xbAzPlayer
- * @filesource mod_xbazplayer/tmpl/default.php
+ * @package xbAzPlayMod
+ * @filesource mod_xbazplaymod/tmpl/default.php
  * @version 0.0.1.3 2nd March 2026
  * @copyright Copyright (c) Roger Creagh-Osborne, 2026
  * @license GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html
@@ -9,20 +9,20 @@
 
 defined('_JEXEC') or die;
 
-use Crosborne\Module\XbAzPlayer\Site\Helper\XbAzPlayerHelper;
+//use Crosborne\Module\XbAzPlayMod\Site\Helper\XbAzPlayModHelper;
 
 $document = $this->app->getDocument();
 $wa = $document->getWebAssetManager();
-$wa->getRegistry()->addExtensionRegistryFile('mod_xbazplayer');
-$wa->useScript('mod_xbazplayer.playerctl');
-$wa->useStyle('xbazplayer.styles');
+$wa->getRegistry()->addExtensionRegistryFile('mod_xbazplaymod');
+$wa->useScript('mod_xbazplaymod.playerctl');
+$wa->useStyle('xbazplaymod.styles');
 
 $playerid = 'player'.$this->module->id;
 // Pass the options down to js
-//$document->addScriptOptions('mod_xbazplayer.vars', ['azurl' => $azurl]);
+//$document->addScriptOptions('mod_xbazplaymod.vars', ['azurl' => $azurl]);
 
 ?>
-<div class="modxbazplayer">
+<div class="modxbazplaymod">
 <?php if($subtitle !='') :?>
 	<div class="xbimgsubtitle"><?php echo $subtitle; ?></div>
 <?php endif; ?>
@@ -32,7 +32,7 @@ $playerid = 'player'.$this->module->id;
         <?php endif; ?>
     </div>
 <?php if ($showcover) : ?>
-	<img id="nowcover" src="/media/mod_xbazplayer/images/wrdefaultcover.jpg" />
+	<img id="nowcover" src="/media/mod_xbazplaymod/images/wrdefaultcover.jpg" />
     <div class="clearfix"></div>
 <?php endif; ?>
 	<audio id="<?php echo $playerid; ?>" style="height:30px;border-radius:12px;"

@@ -1,6 +1,6 @@
 <?php
 /*******
- * @package xbAzHead
+ * @package xbAzPlayer - Head Module xbAzHead
  * @filesource mod_xbazhead/src/Dispathcer/Dispatcher.php
  * @version 0.0.1.4 9th March 2026
  * @copyright Copyright (c) Roger Creagh-Osborne, 2026
@@ -17,7 +17,6 @@ use Joomla\CMS\Helper\ModuleHelper;
 use Joomla\CMS\Application\CMSApplicationInterface;
 use Joomla\Input\Input;
 use Joomla\Registry\Registry;
-//use Crosborne\Module\XbimageCarousel\Site\Helper\XbimageCarouselHelper;
 use Joomla\CMS\Helper\HelperFactoryAwareInterface;
 use Joomla\CMS\Helper\HelperFactoryAwareTrait;
 use Joomla\CMS\Factory;

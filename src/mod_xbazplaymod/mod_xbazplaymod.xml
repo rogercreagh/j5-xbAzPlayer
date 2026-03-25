@@ -1,37 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <extension type="module" client="site" method="upgrade">
-    <name>mod_xbazplayer</name>
-    <version>0.0.1.3</version>
-	<creationDate>28th February 2026</creationDate>
+    <name>mod_xbazplaymod</name>
+    <version>0.0.2.0</version>
+	<creationDate>20th March 2026</creationDate>
 	<author>RogerCO</author>
 	<authorEmail>roger@crosborne.co.uk</authorEmail>
 	<authorUrl>www.crosborne.uk</authorUrl>
 	<copyright>Copyright (C) Roger Creagh-Osborne, 2026, All rights reserved.</copyright>
 	<license>GNU/GPL Version 3</license>
-	<description>MOD_XBAZPLAYER_XML_DESCRIPTION</description>
+	<description>MOD_XBAZPLAYMOD_XML_DESCRIPTION</description>
 
-	<namespace path="src/">Crosborne\Module\XbAzPlayer</namespace>
+	<namespace path="src/">Crosborne\Module\XbAzPlayMod</namespace>
 
-	<scriptfile>script.xbazplayer.php</scriptfile>	
+	<scriptfile>script.xbazplaymod.php</scriptfile>	
     <files>
-        <folder module="mod_xbazplayer">services</folder>
+        <folder module="mod_xbazplaymod">services</folder>
         <folder>src</folder>
         <folder>tmpl</folder>
         <folder>language</folder>
     </files>
-    <media destination="mod_xbazplayer" folder="media">
+    <media destination="mod_xbazplaymod" folder="media">
         <filename>joomla.asset.json</filename>
         <folder>css</folder>
         <folder>js</folder>
         <folder>images</folder>
     </media>
     
-    <!-- CHANGE THESE TO GITHUB ONCE PUBLISHED -->
-    <changelogurl>http://j5.localhost/updateserver/changelog_xbazplayer.xml</changelogurl>
+    <changelogurl>https://raw.githubusercontent.com/rogercreagh/j5-xbAzPlayMod/main/changelog_xbazplaymod.xml</changelogurl>
 	    <!--https://raw.githubusercontent.com/rogercreagh/j5-xbMusic/main/changelog_xbmusic.xml -->
     <updateservers>
-	    <server type="extension" name="xbAzPlayer Module Updates">
-	    	http://j5.localhost/updateserver/update_xbazplayer.xml
+	    <server type="extension" name="xbAzPlayMod Module Updates">
+	    	http://j5.localhost/updateserver/update_xbazplaymod.xml
 	    </server>
 			<!-- https://raw.githubusercontent.com/rogercreagh/j5-xbMusic/main/update_xbmusic.xml -->
 	</updateservers>

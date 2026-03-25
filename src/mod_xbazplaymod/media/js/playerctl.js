@@ -1,6 +1,6 @@
 /**
- * @package xbAzPlayer
- * @filesource /media/mod_xbazplayer/js/playerctl.js
+ * @package xbAzPlayMod
+ * @filesource /media/mod_xbazplaymod/js/playerctl.js
  * @version 0.0.1.3 2nd March 2026
  * @desc functions to start and stop player. Trigger with buttonclick
  * @author Roger C-O

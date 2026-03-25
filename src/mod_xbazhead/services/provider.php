@@ -1,6 +1,6 @@
 <?php
 /*******
- * @package xbMusic
+ * @package xbAzPlayer - Head Module xbAzHead
  * @filesource mod_xbazhead/services/provider.php
  * @version 0.0.1.0 2nd March 2026
  * @since 2nd March 2026

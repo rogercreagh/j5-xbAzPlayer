@@ -27,7 +27,6 @@
         <folder>images</folder>
     </media>
     
-    <!-- CHANGE THESE TO GITHUB ONCE PUBLISHED -->
     <changelogurl>https://raw.githubusercontent.com/rogercreagh/j5-xbAzPlayer/main/changelog_xbazhead.xml</changelogurl>
 
     <updateservers>

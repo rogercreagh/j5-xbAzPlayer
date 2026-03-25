@@ -19,7 +19,7 @@
     		https://raw.githubusercontent.com/rogercreagh/j5-xbAzPlayer/main/changelog_xbazhead.xml
     	</changelogurl>
 		<maintainer>Roger C-O</maintainer>
-		<maintainerurl>https://crosborne.uk/xbimagecarousel</maintainerurl>
+		<maintainerurl>https://crosborne.uk/xbazplayer</maintainerurl>
 		<targetplatform name="joomla" version="5.*"/>	
 		<php_minimum>8.3</php_minimum>
 	</update>
